@@ -66,7 +66,7 @@ public partial class Main : Node
 	public int getSpace() 
 	{
 		int min = lastSpace >= 2 ? lastSpace - 2 : 0;
-		int max = lastSpace <= 4 ? lastSpace + 2 : 6;
+		int max = lastSpace <= 5 ? lastSpace + 2 : 6;
 		return GD.RandRange(min, max);
 	}
 	public override void _Ready()

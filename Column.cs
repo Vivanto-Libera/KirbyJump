@@ -6,7 +6,7 @@ public partial class Column : RigidBody2D
 {
 	public void setSpace(int space) 
 	{
-		for(int i = space; i < space + 3; i++) 
+		for(int i = space; i < space + 2; i++) 
 		{
 			string brickName = "Brick" + i.ToString();
 			GetNode<StaticBody2D>(brickName).QueueFree();
