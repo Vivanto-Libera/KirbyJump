@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh5q53mh60orj"]
+
+[ext_resource type="Texture2D" uid="uid://euebeyaewnsr" path="res://resource/Image/Kriby.png" id="1_q8jv8"]
+[ext_resource type="Script" uid="uid://qe02w55fnucv" path="res://Kirby.cs" id="1_yym33"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mauuu"]
+radius = 24.0
+height = 52.0
+
+[node name="Kirby" type="RigidBody2D"]
+position = Vector2(236, 95)
+gravity_scale = 0.5
+script = ExtResource("1_yym33")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8jv8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mauuu")
