@@ -10,6 +10,10 @@ height = 52.0
 [node name="Kirby" type="RigidBody2D"]
 position = Vector2(236, 95)
 gravity_scale = 0.5
+lock_rotation = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 10
 script = ExtResource("1_yym33")
 metadata/_edit_group_ = true
 
@@ -19,3 +23,5 @@ texture = ExtResource("1_q8jv8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_mauuu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,7 +1,8 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
-public partial class Column : Node2D
+public partial class Column : RigidBody2D
 {
 	public void setSpace(int space) 
 	{
@@ -11,8 +12,11 @@ public partial class Column : Node2D
 			GetNode<StaticBody2D>(brickName).QueueFree();
 		}
 	}
-	public override void _Ready()
+	public override void _Process(double delta)
 	{
-		setSpace(0);
+		if(Position.X == -64) 
+		{
+			QueueFree();
+		}
 	}
 }

@@ -1,11 +1,48 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0qes3oot00rl"]
+[gd_scene load_steps=7 format=3 uid="uid://c0qes3oot00rl"]
 
 [ext_resource type="PackedScene" uid="uid://cc0l2oeqwuw66" path="res://back_ground.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c08qlep2eaj84" path="res://brick.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://ckg17gdn2l6p4" path="res://Main.cs" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b0on4bbuik718" path="res://column.tscn" id="2_7mycd"]
+[ext_resource type="FontFile" uid="uid://dpvuk8mnfigii" path="res://resource/Font/像素Silver.ttf" id="3_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dh5q53mh60orj" path="res://kirby.tscn" id="5_272bh"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_lquwl")
+ColumnScene = ExtResource("2_7mycd")
 
 [node name="BackGround" parent="." instance=ExtResource("1_0xm2m")]
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 63.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_7mycd")
+theme_override_font_sizes/font_size = 100
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -11.0
+offset_right = 192.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_7mycd")
+theme_override_font_sizes/font_size = 50
+text = "Press Space to Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="FloorAndCeiling" type="Node" parent="."]
 
@@ -52,4 +89,21 @@ position = Vector2(352, 672)
 position = Vector2(416, 672)
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(150, 350)
+position = Vector2(150, 352)
+
+[node name="ColumnPosition" type="Marker2D" parent="."]
+position = Vector2(512, 352)
+
+[node name="ColumnTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="Kirby" parent="." instance=ExtResource("5_272bh")]
+visible = false
+position = Vector2(150, 352)
+
+[connection signal="Start" from="." to="." method="_on_start"]
+[connection signal="timeout" from="ColumnTimer" to="." method="_on_column_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="Hit" from="Kirby" to="." method="_on_kirby_hit"]
