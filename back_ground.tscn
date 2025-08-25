@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc0l2oeqwuw66"]
+
+[ext_resource type="Texture2D" uid="uid://doiw553i62cja" path="res://resource/Image/Cloud.png" id="1_lnusq"]
+
+[node name="BackGround" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.529412, 0.807843, 0.921569, 1)
+
+[node name="Cloud3" type="Sprite2D" parent="ColorRect"]
+position = Vector2(360, 142)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
+
+[node name="Cloud0" type="Sprite2D" parent="."]
+position = Vector2(72, 181)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
+
+[node name="Cloud1" type="Sprite2D" parent="."]
+position = Vector2(393, 224)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
+
+[node name="Cloud2" type="Sprite2D" parent="."]
+position = Vector2(220, 162)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
+
+[node name="Cloud3" type="Sprite2D" parent="."]
+position = Vector2(103, 325)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
+
+[node name="Cloud4" type="Sprite2D" parent="."]
+position = Vector2(192, 250)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
+
+[node name="Cloud5" type="Sprite2D" parent="."]
+position = Vector2(228, 389)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
+
+[node name="Cloud6" type="Sprite2D" parent="."]
+position = Vector2(336, 331)
+scale = Vector2(2, 2)
+texture = ExtResource("1_lnusq")
