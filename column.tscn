@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0on4bbuik718"]
+
+[ext_resource type="Script" uid="uid://ctcxudpyx1bab" path="res://Column.cs" id="1_2e7mv"]
+[ext_resource type="PackedScene" uid="uid://c08qlep2eaj84" path="res://brick.tscn" id="2_so666"]
+
+[node name="Column" type="Node2D"]
+position = Vector2(32, 96)
+script = ExtResource("1_2e7mv")
+
+[node name="Brick0" parent="." instance=ExtResource("2_so666")]
+
+[node name="Brick1" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 64)
+
+[node name="Brick2" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 128)
+
+[node name="Brick3" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 192)
+
+[node name="Brick4" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 256)
+
+[node name="Brick5" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 320)
+
+[node name="Brick6" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 384)
+
+[node name="Brick7" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 448)
+
+[node name="Brick8" parent="." instance=ExtResource("2_so666")]
+position = Vector2(0, 512)
